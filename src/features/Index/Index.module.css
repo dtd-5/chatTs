@@ -1,0 +1,8 @@
+.myname{
+    display: inline-block;
+    text-align: center;
+    vertical-align: 150%;
+    color: white;
+    width: max-content;
+    transform: translate(70%,0);
+}
