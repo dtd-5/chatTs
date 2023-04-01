@@ -16,32 +16,16 @@ export function Updata(
         gender,
         nick_name,
         signature
-    }, {
-        headers: {
-            token: `Bear ${localStorage.getItem('token')}`
-        }
     })
 }
 
 export function Password(old_pwd:string,new_pwd:string){
-    return axios.post('/user/change/password',{old_pwd,new_pwd},{
-        headers: {
-            token: `Bear ${localStorage.getItem('token')}`
-        }
-    })
+    return axios.post('/user/change/password',{old_pwd,new_pwd})
 }
 
 export function Friends() {
-    return axios.get('/user/friends', {
-        headers: {
-            token: `Bear ${localStorage.getItem('token')}`
-        }
-    })
+    return axios.get('/user/friends')
 }
 export function Groups() {
-    return axios.get('/user/groups', {
-        headers: {
-            token: `Bear ${localStorage.getItem('token')}`
-        }
-    })
+    return axios.get('/user/groups')
 }

@@ -11,11 +11,8 @@ const contentStyle = {
     TextAlign: "center",
     background: "#364d79",
 };
-interface LoginProps {
 
-}
-
-const Login: FunctionComponent<LoginProps> = () => {
+const Login  = () => {
     let countdownInterval: NodeJS.Timer, countdownElem: HTMLButtonElement;
     let countdown = useRef<HTMLButtonElement>(null);
     const navigate = useNavigate()
@@ -62,7 +59,7 @@ const Login: FunctionComponent<LoginProps> = () => {
         loginapi((document.getElementById('name1') as HTMLInputElement).value, (document.getElementById('password1') as HTMLInputElement).value).then(res => {
             navigate('/index')
             localStorage.setItem('token',res.data.token)
-        },err=>{navigate('/index')})
+        },err=>{alert('失敗，請檢查賬號密碼或聯係管理員')})
     }
     function register(e: any) {
         registerapi((document.getElementById('name2') as HTMLInputElement).value,
@@ -71,7 +68,7 @@ const Login: FunctionComponent<LoginProps> = () => {
             (document.getElementById('code') as HTMLInputElement).value)
             .then(res => {
                 turnlogin()
-            })
+            },err=>{alert(err)})
     }
     return (
         <div>

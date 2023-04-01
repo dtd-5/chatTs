@@ -1,0 +1,12 @@
+.other{
+    width: 100%;
+    text-align: right;
+    height: 3rem;
+    background-color: aqua;
+}
+.myth{
+    width:100%;
+    text-align: left;
+    height: 3rem;
+    background-color: beige;
+}
